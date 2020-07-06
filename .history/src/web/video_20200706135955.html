@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+	<title>videoSnap</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			background: #fdfdfd;
+			background-image: url('images/03.jpg');
+      background-size: cover;
+		}
+
+		.color-grey {
+			color: #aaa;
+		}
+
+		.header {
+			border-bottom: 1px solid #ddd;
+			margin-bottom: 20px;
+			background: #fff;
+		}
+
+		.video-wrapper {
+			position: relative;
+			margin: 0 auto;
+			max-width: 800px;
+			width: 100%;
+			height: 667px;
+		}
+
+		.content {
+			position: relative;
+			margin: 0 auto;
+			padding: 20px;
+			max-width: 840px;
+
+		}
+
+		.video-responsive {
+
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			
+		}
+
+		.canvas,
+		.video {
+			left: calc(100%-385px>>1);
+			position: absolute;
+			top: 10%;
+			width: 300px;
+			background: #000;
+			z-index: 5;
+			cursor: pointer;
+			border: 5px solid #fff;
+		}
+
+		.video-timeline {
+			background: rgba(255, 255, 255, 0.4);
+			bottom: 0;
+			cursor: pointer;
+			height: 12px;
+			left: 0;
+			opacity: 1;
+			position: absolute;
+			transition: all 0.2s;
+			width: 100%;
+			z-index: 12;
+		}
+
+		.video-timeline-passed {
+			background: #E81D31;
+			height: 100%;
+			width: 0;
+		}
+		@media screen and (min-width: 768px) {
+			.video-timeline-passed {
+				background: rgba(255, 255, 255, 0.7);
+			}
+		}
+
+
+		.video-wrapper:hover .video-timeline {
+			height: 12px;
+			opacity: 0.85;
+		}
+
+		.video-wrapper:hover .video-timeline-passed {
+			background: #E81D31;
+		}
+
+		.video-wrapper:hover .video-event {
+			bottom: 12px;
+		}
+
+		.video-wrapper:hover .video-timeline-event {
+			background: #790c17;
+			opacity: 0.8;
+		}
+    .bg {
+  position: relative;
+}
+
+.position1 {
+    position: absolute;
+    top: 0;
+    left: 270px;
+    animation: fallDown 3s infinite;
+    animation-fill-mode: forwards;
+  }
+
+.flower {
+    width: 30px;
+    height: 30px;
+    background: url("//upload-images.jianshu.io/upload_images/6517590-354f700a5039648f.png") no-repeat;
+    background-size: contain;
+  }
+
+@keyframes fallDown {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(-134px) translateY(134px) rotate(180deg);
+    opacity: 1;
+  }
+}
+	</style>
+</head>
+
+<body>	
+	<div id='content' class="video-wrapper js-video-wrapper">
+    <div class="bg">
+      <div class="flower position1" />
+   </div>
+		<div class="video-responsive">
+			<video id='videoPlay' class="video" src="mp4/gege.ogv" muted >
+			</video>
+		</div>
+	</div>
+	<script>
+    //autoplay
+    var contentBtn = document.getElementById("content"); 
+    contentBtn.onclick = function(){
+      var videoElement = document.getElementById("videoPlay");
+      videoElement.play() 
+    }
+	</script>
+</body>
+</html>
