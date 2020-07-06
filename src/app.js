@@ -10,10 +10,12 @@ timesnap({
     '--disable-setuid-sandbox'
   ],
   preparePage(page){
+    //播放视频
     page.tap('#content');
   },
   preparePageForScreenshot(Buffer, a, b) {
-    console.log(Math.round(a/b*100) + "---"+ a  + "---" +b)
+    //打印截取进度 
+    console.log(Math.round(a/b*100) + "%---共截取" +b)
   },
   pipeMode : false,
   canvasCaptureMode : false,
