@@ -22,7 +22,7 @@ timesnap({
           console.log('-----stop browser------')
           setTimeout(() => {
             browser.close();
-          }, 5000)
+          }, 10000)
         }
       } catch (error) {
         //console.log(error);
@@ -46,15 +46,20 @@ timesnap({
   pipeMode: false,
   canvasCaptureMode: false,
   //url: 'http://127.0.0.1:8082/index_bar_sort.html',
-  url: 'http://127.0.0.1:8082/index_line_sort.html',
+  //url: 'http://127.0.0.1:8082/index_line_sort.html',
+  url: 'http://127.0.0.1:8082/template/bar_sort_black.html',
   // url: 'http://video.cross.webdev.com/h5/work/headlessWeb/chart/index2.html',
   // viewport: {
   //   width: 1080,
   //   height: 540
   // },
+  // viewport: {
+  //   width: 840,
+  //   height: 500
+  // },
   viewport: {
-    width: 840,
-    height: 500
+    width: 1180,
+    height: 650
   },
   selector: '#content',
   left: 0, top: 0,
